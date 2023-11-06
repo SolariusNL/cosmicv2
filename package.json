@@ -1,0 +1,23 @@
+{
+  "name": "cosmicv2",
+  "version": "1.0.0",
+  "description": "Cosmic - rewritten",
+  "main": "index.js",
+  "repository": "https://github.com/SolariusNL/cosmicv2",
+  "author": "Solarius B.V.",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "nodemon": "^3.0.1",
+    "os": "^0.1.2",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "wasmoon": "^1.15.1"
+  },
+  "scripts": {
+    "dev": "nodemon --watch 'app/**/*.ts' --exec 'ts-node' app/main.ts",
+    "build:rimraf": "rimraf ./dist && tsc",
+    "start:rimraf": "yarn run build:rimraf && node ./dist/main.js"
+  }
+}
