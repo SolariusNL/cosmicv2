@@ -5,8 +5,7 @@ import { config } from "../main";
 import { Logger, LoggingNamespace } from "./logger";
 
 async function getAllFiles(
-  dirPath: string,
-  baseDir: string
+  dirPath: string
 ): Promise<string[]> {
   const files: string[] = [];
 
@@ -35,7 +34,7 @@ async function runProject() {
     const projectPath = config.projectPath;
     const luaScriptPath = path.join(projectPath);
 
-    const files = await getAllFiles(luaScriptPath, luaScriptPath);
+    const files = await getAllFiles(luaScriptPath);
 
     for (const luaFilePath of files) {
       const data = readFileSync(path.join(luaScriptPath, luaFilePath), "utf-8");
