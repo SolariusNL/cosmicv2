@@ -14,8 +14,6 @@ async function getAllFiles(
     const entries = readdirSync(currentDir);
     for (const entry of entries) {
       const fullPath = path.join(currentDir, entry);
-      const relativePath = path.relative(baseDir, fullPath);
-
       if (statSync(fullPath).isDirectory()) {
         getFilesRecursively(fullPath, path.join(currentPath, entry));
       } else if (entry.endsWith(".lua")) {
