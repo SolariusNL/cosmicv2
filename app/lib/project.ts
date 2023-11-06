@@ -4,9 +4,7 @@ import * as wasmoon from "wasmoon";
 import { config } from "../main";
 import { Logger, LoggingNamespace } from "./logger";
 
-async function getAllFiles(
-  dirPath: string
-): Promise<string[]> {
+async function getAllFiles(dirPath: string): Promise<string[]> {
   const files: string[] = [];
 
   const getFilesRecursively = (currentDir: string, currentPath: string) => {
